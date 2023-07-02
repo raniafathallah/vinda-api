@@ -5,7 +5,10 @@ const mongoose = require('mongoose');
 const connectionStr = process.env.DATABASE;
 
 
-mongoose.connect(connectionStr, {useNewUrlparser: true})
+mongoose.connect(connectionStr, {
+  useNewUrlparser: true,
+  useUnifiedTopology: true
+})
 .then(() => console.log('connected to mongodb'))
 .catch(err => console.log(err))
 
